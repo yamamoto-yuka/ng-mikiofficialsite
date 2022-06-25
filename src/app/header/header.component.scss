@@ -79,6 +79,16 @@ nav {
     padding: 0;
     font-family:'Caveat',sans-serif ;
   }
+  .nav-item .activepage{
+    background-color: $hover;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  a .activepage{
+    color: white !important;
+    font-weight: bold;
+  }
   a {
     color: $text;
     width: 100%;
@@ -143,6 +153,10 @@ nav.active {
 }
 
 @media screen and (min-width: 1024px) {
+
+  .header-inner {
+    padding: 0 60px;
+  }
   nav {
     position: static;
     transform: initial;
@@ -151,7 +165,7 @@ nav.active {
     justify-content: flex-end;
     width: 50%;
     .nav-items {
-      width: 100%;
+      width: 70%;
       @include centerCenter($j: space-around);
       margin-bottom: 0;
       position: inherit;
@@ -160,6 +174,12 @@ nav.active {
       transform: translate(0, 0);
       a {
         margin-bottom: 0;
+        font-size: 1.5rem;
+      }
+      a:hover,
+      a:active {
+        @include hover($translateY:-20%);
+        font-weight: bold;        
       }
     }
   }
