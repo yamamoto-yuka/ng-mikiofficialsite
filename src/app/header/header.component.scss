@@ -1,17 +1,16 @@
 $text: #6d6d6d;
-$hover:#03A2BC;
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+$hover: #03a2bc;
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
 @mixin centerCenter($j: center, $a: center) {
   display: flex;
   justify-content: $j;
   align-items: $a;
 }
-@mixin  hover($translateY:-50%) {
+@mixin hover($translateY: -50%) {
   color: $hover;
   transform: translateY($translateY);
   transition: all 0.5s ease-in-out;
 }
-
 
 header {
   height: 20vh;
@@ -30,9 +29,8 @@ header {
     width: 100%;
   }
   svg:hover,
-  svg:active
-  {
-    @include hover($translateY:-20%);
+  svg:active {
+    @include hover($translateY: -20%);
   }
 }
 .header-inner {
@@ -43,7 +41,7 @@ header {
 }
 
 .social-items {
-  @include centerCenter($j:flex-start);
+  @include centerCenter($j: flex-start);
   margin-bottom: 0;
   .social-item {
     margin-right: 35px;
@@ -56,8 +54,8 @@ header {
     color: $text;
   }
   i:hover,
-  i:active{
-@include hover();
+  i:active {
+    @include hover();
   }
 }
 
@@ -77,17 +75,7 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0;
-    font-family:'Caveat',sans-serif ;
-  }
-  .nav-item .activepage{
-    background-color: $hover;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-  }
-  a .activepage{
-    color: white !important;
-    font-weight: bold;
+    font-family: "Caveat", sans-serif;
   }
   a {
     color: $text;
@@ -98,17 +86,21 @@ nav {
     margin-bottom: 20px;
   }
   a:hover,
-  a:active{
-    @include hover($translateY:0);
+  a:active {
+    @include hover($translateY: 0);
   }
-
 }
 nav.active {
   transform: translateX(0);
 }
 
+.activetext {
+  color: $hover !important;
+  font-weight: bold;
+}
+
 .hamburger {
-  @include centerCenter($j:flex-end);
+  @include centerCenter($j: flex-end);
   button {
     width: 30px;
     height: 100%;
@@ -153,7 +145,6 @@ nav.active {
 }
 
 @media screen and (min-width: 1024px) {
-
   .header-inner {
     padding: 0 60px;
   }
@@ -178,12 +169,22 @@ nav.active {
       }
       a:hover,
       a:active {
-        @include hover($translateY:-20%);
-        font-weight: bold;        
+        @include hover($translateY: -20%);
+        font-weight: bold;
       }
     }
   }
   .hamburger {
     display: none;
+  }
+  .activepage {
+    background-color: $hover;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  .activetext {
+    color: white !important;
+    font-weight: bold;
   }
 }

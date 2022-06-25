@@ -93,22 +93,22 @@
     </h1>
     <ul class="col-6 social-items">
       <li class="social-item">
-        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://twitter.com/mikiguitar0624" target="_blank"><i class="fa-brands fa-twitter"></i></a>
       </li>
       <li class="social-item">
-        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.instagram.com/mikiguitar0624/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       </li>
       <li class="social-item">
-        <a href=""><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.youtube.com/channel/UCaL-rcQrfDoSpQFHG9OTGng"target="_blank" ><i class="fa-brands fa-youtube"></i></a>
       </li>
     </ul>
     <nav #nav>
       <ul class="nav-items">
-        <li class="nav-item"><a href="">Live</a></li>
-        <li class="nav-item"><a href="">Disc</a></li>
-        <li class="nav-item"><a href="">Contact</a></li>
-        <li class="nav-item"><a href="">Bio</a></li>
-        <li class="nav-item"><a href="">Goods</a></li>
+        <li class="nav-item" [class.activepage]="livePage"><a [class.activetext]="livePage" routerLink="/live">Live</a></li>
+        <li class="nav-item" [class.activepage]="discPage"><a [class.activetext]="discPage" routerLink="/disc">Disc</a></li>
+        <li class="nav-item" [class.activepage]="contactPage"><a [class.activetext]="contactPage" routerLink="/contact">Contact</a></li>
+        <li class="nav-item" [class.activepage]="bioPage"><a [class.activetext]="bioPage" routerLink="/bio">Bio</a></li>
+        <li class="nav-item" [class.activepage]="goodsPage"><a  [class.activetext]="goodsPage" routerLink="goods">Goods</a></li>
       </ul>
     </nav>
     <div class="col-6 hamburger">
