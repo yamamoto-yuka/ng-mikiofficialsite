@@ -1,0 +1,138 @@
+@mixin centerCenter($j: center, $a: center) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+}
+
+header {
+  height: 20vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+#logo {
+  height: 3rem;
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+.header-inner {
+  @include centerCenter($j: space-around);
+  height: 100%;
+  position: relative;
+}
+
+.social-items {
+  @include centerCenter();
+  .social-item {
+    margin-right: 20px;
+  }
+  .social-item:last-child {
+    margin-right: 0;
+  }
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+  .nav-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+  }
+  a {
+    color: black;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
+nav.active {
+  transform: translateX(0);
+}
+
+.hamburger {
+  @include centerCenter();
+  button {
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border-color: transparent;
+    z-index: 1000;
+    span {
+      width: 100%;
+      height: 1px;
+      background-color: black;
+      position: relative;
+      display: block;
+    }
+    span:nth-child(1) {
+      top: 0;
+    }
+    span:nth-child(2) {
+      margin: 8px 0;
+    }
+    span:nth-child(3) {
+      top: 0;
+    }
+  }
+}
+.hamburger {
+  button.active {
+    span {
+      transition: all 0.5s ease-in-out;
+    }
+    span:nth-child(1) {
+      top: 5px;
+      transform: rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      top: -13px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    position: static;
+    transform: initial;
+    height: inherit;
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    .nav-items {
+      width: 100%;
+      @include centerCenter($j: space-around);
+      margin-bottom: 0;
+      position: inherit;
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      a{
+        margin-bottom: 0;
+      }
+    }
+  }
+  .hamburger{
+    display: none;
+  }
+}
