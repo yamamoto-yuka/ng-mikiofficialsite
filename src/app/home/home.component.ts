@@ -27,10 +27,24 @@ export class HomeComponent implements OnInit {
     alt:'miki_美稀_banner'
   }]
 
+  liveinfo:any ={
+    date:'2022/6/25 @渋谷gee-ge',
+    title:'美稀 1st One Man Live おことばに甘えて',
+    desc:'Twitter DMにて予約受付中！'
+  }
+
+  // videos:any[] =[{
+  //   url:'https://www.youtube.com/embed/bg-8H5LiWGY',
+  //   title:'春の歌/スピッツ(Cover)'
+  // },{
+  //   url:'https://www.youtube.com/embed/Vwr9yr86j80',
+  //   title:'おまじない/美稀'
+  // }]
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.banners[0].img);
+    // console.log(this.videos[0].title);
   }
 
 }
