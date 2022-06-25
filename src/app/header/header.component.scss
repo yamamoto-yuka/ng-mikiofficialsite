@@ -20,10 +20,21 @@ header {
   left: 0;
   right: 0;
   z-index: 999;
+  background-color: white;
 }
+.header-inner {
+  @include centerCenter($j: space-around);
+  height: 100%;
+  position: relative;
+  padding: 0 30px;
+}
+
+.header-title{
+  height: 50%;
+  margin-bottom: 0;
+  padding-top: 15px;
 #logo {
   height: 3.5rem;
-  margin: 20px 0 30px 0;
   svg {
     height: 100%;
     width: 100%;
@@ -33,16 +44,12 @@ header {
     @include hover($translateY: -20%);
   }
 }
-.header-inner {
-  @include centerCenter($j: space-around);
-  height: 100%;
-  position: relative;
-  padding: 0 30px;
 }
 
 .social-items {
-  @include centerCenter($j: flex-start);
+  height: 50%;
   margin-bottom: 0;
+  @include centerCenter($j: flex-start);
   .social-item {
     margin-right: 35px;
   }
@@ -126,6 +133,7 @@ nav.active {
   }
 }
 .hamburger {
+  height: 50%;
   button.active {
     span {
       transition: all 0.5s ease-in-out;
@@ -151,7 +159,7 @@ nav.active {
   nav {
     position: static;
     transform: initial;
-    height: inherit;
+    height: 50%;
     display: flex;
     justify-content: flex-end;
     width: 50%;
