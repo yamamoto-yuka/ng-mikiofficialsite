@@ -29,6 +29,9 @@ a {
 a:hover {
   @include hover();
 }
+img{
+  border: 1px solid #cccbcb;
+}
 
 .headline {
   margin-bottom: 50px;
@@ -37,7 +40,7 @@ a:hover {
   font-family: "Caveat", sans-serif;
 }
 
-.carousel {
+.container {
   margin-top: 25vh;
 }
 
