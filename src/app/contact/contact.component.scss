@@ -1,0 +1,42 @@
+@import '../../styles.scss';
+
+label{
+  font-size: .8rem;
+  color: $text;
+}
+input{
+  padding: 8px 0;
+}
+.name{
+  width: 30%;
+}
+.email,
+.subject{
+  width: 50%;
+}
+.contact-submit{
+  width: 100%;
+  @include centerCenter();
+}
+button{
+  padding: 15px 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: $hover;
+  color: white;
+}
+button:hover{
+  background-color: #016f80;
+}
+
+button:active{
+  background-color: #01515d;
+}
+
+
+@media screen and (min-width: 1024px) {
+ .container{
+  padding-left:100px;
+  padding-right:100px;
+ }
+}

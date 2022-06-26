@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="container">
+<div #container class="container">
   <div
     id="carouselExampleControls"
     class="carousel slide"
@@ -12,7 +12,7 @@
         [class.active]="i === 0"
         *ngFor="let banner of banners; let i = index"
       >
-        <img [src]="banner.img" class="d-block w-100" [alt]="banner.alt" />
+        <a [href]="banner.url"><img [src]="banner.img" class="d-block w-100" [alt]="banner.alt" /></a>
       </div>
     </div>
     <button
@@ -35,7 +35,7 @@
     </button>
   </div>
 
-  <div class="home-liveinfo">
+  <div #live class="home-liveinfo">
     <h2 class="headline">Live</h2>
     <div class="wrapper">
       <p>
@@ -46,9 +46,9 @@
   </div>
 
   <div class="video">
-    <h2 class="headline">Video</h2>
+    <h2 #videoHeadline class="headline">Video</h2>
     <div class="wrapper">
-      <div class="videoContainer">
+      <div #firstVideo class="videoContainer">
         <div>
           <iframe
             width="100%"
@@ -62,7 +62,7 @@
         </div>
         <p>春の歌/スピッツ(Cover)</p>
       </div>
-      <div class="videoContainer">
+      <div #secondVideo class="videoContainer">
         <div>
           <iframe
             width="100%"
