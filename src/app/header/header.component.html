@@ -104,11 +104,11 @@
     </ul>
     <nav #nav>
       <ul class="nav-items">
-        <li class="nav-item" [class.activepage]="livePage"><a [class.activetext]="livePage" routerLink="/live">Live</a></li>
-        <li class="nav-item" [class.activepage]="discPage"><a [class.activetext]="discPage" routerLink="/disc">Disc</a></li>
-        <li class="nav-item" [class.activepage]="contactPage"><a [class.activetext]="contactPage" routerLink="/contact">Contact</a></li>
-        <li class="nav-item" [class.activepage]="bioPage"><a [class.activetext]="bioPage" routerLink="/bio">Bio</a></li>
-        <li class="nav-item" [class.activepage]="goodsPage"><a  [class.activetext]="goodsPage" routerLink="goods">Goods</a></li>
+        <li class="nav-item" [class.livepage]="livePage"><a [class.livetext]="livePage" routerLink="/live">Live</a></li>
+        <li class="nav-item" [class.discpage]="discPage"><a [class.disctext]="discPage" routerLink="/disc">Disc</a></li>
+        <li class="nav-item" [class.contactpage]="contactPage"><a [class.contacttext]="contactPage" routerLink="/contact">Contact</a></li>
+        <li class="nav-item" [class.biopage]="bioPage"><a [class.biotext]="bioPage" routerLink="/bio">Bio</a></li>
+        <!-- <li class="nav-item" [class.goodspage]="goodsPage"><a  [class.goodstext]="goodsPage" routerLink="goods">Goods</a></li> -->
       </ul>
     </nav>
     <div class="col-6 hamburger">

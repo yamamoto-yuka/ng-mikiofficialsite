@@ -7,8 +7,8 @@ $hover: #03a2bc;
   justify-content: $j;
   align-items: $a;
 }
-@mixin hover($translateY: -50%) {
-  color: $hover;
+@mixin hover($color:$hover, $translateY: -50%) {
+  color: $color;
   transform: translateY($translateY);
   transition: all 0.5s ease-in-out;
 }
@@ -46,9 +46,8 @@ a {
   font-family: "Noto+Sans+JP", sans-serif;
 }
 
-.container {
-  margin-top: 25vh;
-  padding: 0 20px;
+.container{
+  padding: 25vh 20px 0 20px;
 }
 
 .headline {

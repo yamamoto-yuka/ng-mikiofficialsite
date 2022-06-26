@@ -1,5 +1,6 @@
 @import '../../styles.scss';
 
+
 header {
   height: 20vh;
   width: 100%;
@@ -88,11 +89,28 @@ nav.active {
   transform: translateX(0);
   background-color: white;
 }
-
-.activetext {
-  color: $hover !important;
+.livetext,
+.discpage,
+.contactpage,
+.biopage{
   font-weight: bold;
 }
+.livetext{
+  color: #dbedea !important;
+}
+.disctext{
+  color: #feeec6 !important;
+}
+.contacttext{
+  color: #f9dfd6 !important;
+}
+.biotext{
+  color: #c9cbeb !important;
+}
+// .goodspage{
+//   color: #dbedea !important;
+// }
+
 
 .hamburger {
   @include centerCenter($j: flex-end);
@@ -173,14 +191,35 @@ nav.active {
   .hamburger {
     display: none;
   }
-  .activepage {
-    background-color: $hover;
+
+  .livepage,
+  .discpage,
+  .contactpage,
+  .biopage
+  {
     height: 50px;
     width: 50px;
     border-radius: 50%;
   }
-  .activetext {
-    color: white !important;
-    font-weight: bold;
+  .livepage{
+    background-color: #dbedea !important;
   }
+  .discpage{
+    background-color: #feeec6 !important;
+  }
+  .contactpage{
+    background-color: #f9dfd6 !important;
+  }
+  .biopage{
+    background-color: #c9cbeb !important;
+  }
+  .livetext,
+  .disctext,
+  .contacttext,
+  .biotext{
+    color: white !important;
+  }
+
 }
+
+
