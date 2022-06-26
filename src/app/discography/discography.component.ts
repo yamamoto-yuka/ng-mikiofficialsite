@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./discography.component.scss']
 })
 export class DiscographyComponent implements OnInit {
-
+  discBg:string = '../../assets/footer/discography_bg.png';
   constructor() { }
 
   ngOnInit(): void {

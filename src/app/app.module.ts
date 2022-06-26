@@ -9,6 +9,7 @@ import { LiveComponent } from './live/live.component';
 import { DiscographyComponent } from './discography/discography.component';
 import { ContactComponent } from './contact/contact.component';
 import { BiographyComponent } from './biography/biography.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BiographyComponent } from './biography/biography.component';
     LiveComponent,
     DiscographyComponent,
     ContactComponent,
-    BiographyComponent
+    BiographyComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

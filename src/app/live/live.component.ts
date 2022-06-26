@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./live.component.scss']
 })
 export class LiveComponent implements OnInit {
+  liveBg:string =  '../../assets/footer/live_bg.png';
 
   constructor() { }
 

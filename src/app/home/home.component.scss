@@ -1,7 +1,7 @@
 $text: #6d6d6d;
 $hover: #03a2bc;
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
 @mixin centerCenter($j: center, $a: center) {
   display: flex;
   justify-content: $j;
@@ -13,47 +13,51 @@ $hover: #03a2bc;
   transition: all 0.5s ease-in-out;
 }
 
-
-h1,h2,h3,p,a{
+h1,
+h2,
+h3,
+p,
+a {
   color: $text;
-  font-family: 'Noto+Sans+JP', sans-serif;
+  font-family: "Noto+Sans+JP", sans-serif;
 }
-.wrapper{
+.wrapper {
   @include centerCenter();
   flex-direction: column;
 }
 
-a:hover{
+a:hover {
   @include hover();
 }
 
-.headline{
+.headline {
   margin-bottom: 50px;
   font-size: 3.5rem;
   color: $text;
   font-family: "Caveat", sans-serif;
 }
 
-.carousel{
+.carousel {
   margin-top: 25vh;
 }
 
-.home-liveinfo{
+.home-liveinfo {
   margin: 100px 0;
-p{
-  margin-bottom: 50px;
-}
+  p {
+    margin-bottom: 50px;
+  }
 }
 
-.videoContainer{
+.videoContainer {
   width: 100%;
   margin-bottom: 20px;
-  div{
+  div {
     position: relative;
     height: 0;
     padding: 30px 0 56.25%;
     overflow: hidden;
-    iframe{
+
+    iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -64,18 +68,17 @@ p{
 }
 
 @media screen and (min-width: 768px) {
-  .wrapper{
+  .wrapper {
     flex-direction: row;
-    @include centerCenter($j:space-around);
+    @include centerCenter($j: space-around);
   }
-  .videoContainer{
+  .videoContainer {
     margin-bottom: 0;
   }
-  .videoContainer:first-child{
+  .videoContainer:first-child {
     margin-right: 15px;
   }
-  .videoContainer:last-child{
+  .videoContainer:last-child {
     margin-left: 15px;
   }
 }
-
