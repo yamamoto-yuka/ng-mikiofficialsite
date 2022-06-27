@@ -158,9 +158,17 @@ nav.active {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .header-inner {
+    padding: 0 80px;
+  }
+}
+
+
+
 @media screen and (min-width: 1024px) {
   .header-inner {
-    padding: 0 60px;
+    padding: 0 100px;
   }
   nav {
     position: static;

@@ -1,3 +1,5 @@
+<loading></loading>
+
 <app-header></app-header>
 
 <div #container class="container">
@@ -41,7 +43,7 @@
       <p>
         {{liveinfo.date}}<br />{{liveinfo.title}}<br />{{liveinfo.desc}}
       </p>
-      <a routerLink="/live">- VIEW MORE</a>
+      <a routerLink="/live"><i class="fa-solid fa-circle-arrow-right"></i> {{liveinfo.link}}</a>
     </div>
   </div>
 

@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BiographyComponent } from './biography/biography.component';
 import { FooterComponent } from './footer/footer.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
     ContactComponent,
     BiographyComponent,
     FooterComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

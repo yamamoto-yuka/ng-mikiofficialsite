@@ -3,71 +3,56 @@
   <div class="headline">
     <h1>Discography</h1>
   </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-4 disc-container">
+  <div class="row disc-container">
+    <div class="col-sm-12 col-md-4 disc-info" *ngFor="let disc of discCovers;">
       <div class="disc-cover">
-        <img src="../../assets/cover/6月の花言葉.jpeg" alt="" />
+        <img [src]="disc.cover" [alt]="disc.alt" />
         <div class="mask">
           <div class="caption">
-            <p>Digital</p>
-            <h3>6月の花言葉</h3>
-            <a href="https://eggs.mu/artist/mikiguitar0624/song/34768667-68e7-419e-b4bb-1051f3799d95" target="_blank"><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a>
+            <p>{{disc.type}}</p>
+            <h3>{{disc.title}}</h3>
+            <a [href]="disc.url" target="_blank"><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a>
           </div>
         </div>
       </div>
     </div>
   
-    <div class="col-sm-12 col-md-4 disc-container">
+    <div class="col-sm-12 col-md-4 disc-info">
       <div class="disc-cover">
-        <img src="../../assets/cover/6月の花言葉.jpeg" alt="" />
+        <img src="../../assets/cover/美稀_LiveTracks1.png" alt="美稀_CD_LiveTracks1" />
         <div class="mask">
           <div class="caption">
-            <p>Digital</p>
-            <h3>6月の花言葉</h3>
-            <a href="https://eggs.mu/artist/mikiguitar0624/song/34768667-68e7-419e-b4bb-1051f3799d95" target="_blank"><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a>
+            <p>CD</p>
+            <h3>美稀 Live Tracks</h3>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-12 col-md-4 disc-container">
+    <div class="col-sm-12 col-md-4 disc-info">
       <div class="disc-cover">
-        <img src="../../assets/cover/6月の花言葉.jpeg" alt="" />
+        <img src="../../assets/cover/美稀_LIveTracksVol2.png" alt="美稀_CD_LIveTracksVol2" />
         <div class="mask">
           <div class="caption">
-            <p>Digital</p>
-            <h3>6月の花言葉</h3>
-            <a href="https://eggs.mu/artist/mikiguitar0624/song/34768667-68e7-419e-b4bb-1051f3799d95" target="_blank"><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a>
+            <p>CD</p>
+            <h3>美稀 LIve Tracks Vol2</h3>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-12 col-md-4 disc-container">
+    <div class="col-sm-12 col-md-4 disc-info">
       <div class="disc-cover">
-        <img src="../../assets/cover/6月の花言葉.jpeg" alt="" />
+        <img src="../../assets/cover/美稀_人魚姫は見つからない.png" alt="美稀_CD_息をする" />
         <div class="mask">
           <div class="caption">
-            <p>Digital</p>
-            <h3>6月の花言葉</h3>
-            <a href="https://eggs.mu/artist/mikiguitar0624/song/34768667-68e7-419e-b4bb-1051f3799d95" target="_blank"><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a>
+            <p>CD</p>
+            <h3>人魚姫は見つからない</h3>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-12 col-md-4 disc-container">
-      <div class="disc-cover">
-        <img src="../../assets/cover/6月の花言葉.jpeg" alt="" />
-        <div class="mask">
-          <div class="caption">
-            <p>Digital</p>
-            <h3>6月の花言葉</h3>
-            <a href="https://eggs.mu/artist/mikiguitar0624/song/34768667-68e7-419e-b4bb-1051f3799d95" target="_blank"><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 <app-footer [bgimg]="discBg"></app-footer>

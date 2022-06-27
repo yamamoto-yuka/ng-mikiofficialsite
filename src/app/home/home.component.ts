@@ -35,7 +35,8 @@ export class HomeComponent implements OnInit {
   liveinfo:any ={
     date:'2022/6/25 @渋谷gee-ge',
     title:'美稀 1st One Man Live おことばに甘えて',
-    desc:'Twitter DMにて予約受付中！'
+    desc:'無事終了しました！ありがとう！',
+    link:'過去公演情報をみる'
   }
 
   // videos:any[] =[{
