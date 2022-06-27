@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { gsap } from 'gsap'
-import { CommonService } from '../serveices/common.service';
-import { Homebanner } from '../interfaces/interface';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +8,14 @@ import { Homebanner } from '../interfaces/interface';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('container', {static:true}) container:ElementRef<HTMLElement>;
+  @ViewChild('live', {static:true}) live:ElementRef<HTMLDivElement>;
+  @ViewChild('videoHeadline', {static:true}) videoHeadline:ElementRef<HTMLDivElement>;
+  @ViewChild('firstVideo', {static:true}) firstVideo:ElementRef<HTMLDivElement>;
+  @ViewChild('secondVideo', {static:true}) secondVideo:ElementRef<HTMLDivElement>;
   banners:any[] =[];
   host = "http://localhost:1337";
+  liveinfo:any;
   // banners:any[] = [{
   //   id:1,
   //   img:'../../assets/banner/CityLights_cover.png',
@@ -36,26 +41,12 @@ export class HomeComponent implements OnInit {
   //   url:'#'
   // }]
 
-  liveinfo:any ={
-    date:'2022/6/25 @渋谷gee-ge',
-    title:'美稀 1st One Man Live おことばに甘えて',
-    desc:'無事終了しました！ありがとう！',
-    link:'過去公演情報をみる'
-  }
-
-  // videos:any[] =[{
-  //   url:'https://www.youtube.com/embed/bg-8H5LiWGY',
-  //   title:'春の歌/スピッツ(Cover)'
-  // },{
-  //   url:'https://www.youtube.com/embed/Vwr9yr86j80',
-  //   title:'おまじない/美稀'
-  // }]
-
-  @ViewChild('container', {static:true}) container:ElementRef<HTMLElement>;
-  @ViewChild('live', {static:true}) live:ElementRef<HTMLDivElement>;
-  @ViewChild('videoHeadline', {static:true}) videoHeadline:ElementRef<HTMLDivElement>;
-  @ViewChild('firstVideo', {static:true}) firstVideo:ElementRef<HTMLDivElement>;
-  @ViewChild('secondVideo', {static:true}) secondVideo:ElementRef<HTMLDivElement>;
+  // liveinfo:any ={
+  //   date:'2022/6/25 @渋谷gee-ge',
+  //   title:'美稀 1st One Man Live おことばに甘えて',
+  //   desc:'無事終了しました！ありがとう！',
+  //   link:'過去公演情報をみる'
+  // }
 
   constructor(private cs:CommonService) { }
 
@@ -91,11 +82,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.videos[0].title);
     this.animation();
     this.cs.getHomeBanner().subscribe(banners =>{
       console.log(banners.data);
       this.banners = banners.data;
+    })
+    this.cs.getHomelive().subscribe(liveinfo =>{
+      console.log(liveinfo.data);
+      this.liveinfo = liveinfo.data;
     })
   }
 

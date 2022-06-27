@@ -4,14 +4,14 @@
     <h1>Discography</h1>
   </div>
   <div class="row disc-container">
-    <div class="col-sm-12 col-md-4 disc-info" *ngFor="let disc of discCovers;">
+    <div class="col-sm-12 col-md-4 disc-info" *ngFor="let discography of discographies;">
       <div class="disc-cover">
-        <img [src]="disc.cover" [alt]="disc.alt" />
+        <img [src]="host + discography.attributes.img.data[0].attributes.formats.small.url" />
         <div class="mask">
           <div class="caption">
-            <p>{{disc.type}}</p>
-            <h3>{{disc.title}}</h3>
-            <a [href]="disc.url" target="_blank"><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a>
+            <p>{{discography.attributes.type}}</p>
+            <h3>{{discography.attributes.title}}</h3>
+            <a [href]="discography.attributes.url" target="_blank"><i class="fa-solid fa-circle-arrow-right"></i> EGGSで聴く</a>
           </div>
         </div>
       </div>
