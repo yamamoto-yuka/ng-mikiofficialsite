@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../services/common.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,14 +13,19 @@ export class ContactComponent implements OnInit {
   email:string ='';
   subject:string ='';
   content:string = '';
-  constructor(private router:Router) { }
+  constructor(private cs:CommonService, private router:Router) { }
 
   submit(name:any, email:any, subject:any, content:any){
-    // this.router.navigate(['/confirm']);
+    this.cs.postContact(this.name, this.email, this.subject, this.content).subscribe(contactData =>{
+      console.log(contactData);
+      if(contactData.data){
+        this.router.navigate(['/confirm']);
+      }
+    })
+
 
   }
   ngOnInit(): void {
-    
   }
 
 }

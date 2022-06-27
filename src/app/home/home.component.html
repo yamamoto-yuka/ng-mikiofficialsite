@@ -1,7 +1,5 @@
 <loading></loading>
-
 <app-header></app-header>
-
 <div #container class="container">
   <div
     id="carouselExampleControls"
@@ -14,7 +12,14 @@
         [class.active]="i === 0"
         *ngFor="let banner of banners; let i = index"
       >
-        <a [href]="banner.attributes.url"><img [src]="host + banner.attributes.img.data[0].attributes.formats.large.url" class="d-block w-100" [alt]="banner.attributes.alt" /></a>
+        <a [href]="banner.attributes.url"
+          ><img
+            [src]="
+              host + banner.attributes.img.data[0].attributes.formats.large.url
+            "
+            class="d-block w-100"
+            [alt]="banner.attributes.alt"
+        /></a>
       </div>
     </div>
     <button
@@ -36,18 +41,17 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
   <div #live class="home-liveinfo">
     <h2 class="headline">Live</h2>
     <div class="wrapper">
       <p>
-        {{liveinfo.attributes.date}}<br />{{liveinfo.attributes.title}}<br />{{liveinfo.attributes.desc}}
+        {{ liveinfo.attributes.date }}<br />{{ liveinfo.attributes.title
+        }}<br />{{ liveinfo.attributes.desc }}
       </p>
-      <a [href]="liveinfo.attributes.link">{{liveinfo.attributes.btnname}}</a>
+      <a [href]="liveinfo.attributes.link">{{ liveinfo.attributes.btnname }}</a>
       <!-- <i class="fa-solid fa-circle-arrow-right"></i> -->
     </div>
   </div>
-
   <div class="video">
     <h2 #videoHeadline class="headline">Video</h2>
     <div class="wrapper">
@@ -82,6 +86,4 @@
     </div>
   </div>
 </div>
-
 <app-footer></app-footer>
-

@@ -12,7 +12,6 @@ $hover: #03a2bc;
   transform: translateY($translateY);
   transition: all 0.5s ease-in-out;
 }
-
 h1,
 h2,
 h3,
@@ -25,26 +24,21 @@ a {
   @include centerCenter();
   flex-direction: column;
 }
-
 a:hover {
   @include hover();
 }
 img{
   border: 1px solid #cccbcb;
 }
-
 .headline {
   margin-bottom: 50px;
   font-size: 3.5rem;
   color: $text;
   font-family: "Caveat", sans-serif;
 }
-
 .container{
   padding: 25vh 20px 0 20px;
 }
-
-
 .home-liveinfo {
   transform: translateX(-400);
   margin: 100px 0;
@@ -52,7 +46,6 @@ img{
     margin-bottom: 50px;
   }
 }
-
 .videoContainer {
   width: 100%;
   margin-bottom: 20px;
@@ -61,7 +54,6 @@ img{
     height: 0;
     padding: 30px 0 56.25%;
     overflow: hidden;
-
     iframe {
       position: absolute;
       top: 0;

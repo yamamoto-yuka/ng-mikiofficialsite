@@ -5,10 +5,20 @@
   text-align: center;
 }
 
+  .required{
+    font-size: .8rem;
+    color: red;
+  }
+
 label {
   font-size: 0.8rem;
   color: $text;
 }
+label::after{
+  content: " *";
+  color: red;
+}
+
 input {
   padding: 8px 0;
   font-size: 0.8rem;
@@ -17,7 +27,9 @@ input {
   width: 100%;
   @include centerCenter();
 }
-button {
+button,
+button:hover,
+button:active {
   padding: 15px 30px;
   border: none;
   border-radius: 15px;
