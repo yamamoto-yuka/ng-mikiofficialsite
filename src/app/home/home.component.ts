@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { gsap } from 'gsap'
+import { CommonService } from '../serveices/common.service';
+import { Homebanner } from '../interfaces/interface';
 
 @Component({
   selector: 'app-home',
@@ -7,30 +9,32 @@ import { gsap } from 'gsap'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  banners:any[] = [{
-    id:1,
-    img:'../../assets/banner/CityLights_cover.png',
-    alt:'miki_美稀_liveinfo_citylights_banner',
-    url:'#'
-  },
-  {
-    id:2,
-    img:'../../assets/banner/おことばに甘えて.png',
-    alt:'miki_美稀_liveinfo_onemanlove_banner',
-    url:'#'
-  },
-  {
-    id:3,
-    img:'../../assets/banner/ぷらそにか.png',
-    alt:'miki_美稀_plusonicainfo_ぷらそにか_banner',
-    url:'https://www.youtube.com/watch?v=0ddDlc4fpI4'
-  },  
-  {
-    id:4,
-    img:'../../assets/banner/美稀.png',
-    alt:'miki_美稀_banner',
-    url:'#'
-  }]
+  banners:any[] =[];
+  host = "http://localhost:1337";
+  // banners:any[] = [{
+  //   id:1,
+  //   img:'../../assets/banner/CityLights_cover.png',
+  //   alt:'miki_美稀_liveinfo_citylights_banner',
+  //   url:'#'
+  // },
+  // {
+  //   id:2,
+  //   img:'../../assets/banner/おことばに甘えて.png',
+  //   alt:'miki_美稀_liveinfo_onemanlove_banner',
+  //   url:'#'
+  // },
+  // {
+  //   id:3,
+  //   img:'../../assets/banner/ぷらそにか.png',
+  //   alt:'miki_美稀_plusonicainfo_ぷらそにか_banner',
+  //   url:'https://www.youtube.com/watch?v=0ddDlc4fpI4'
+  // },  
+  // {
+  //   id:4,
+  //   img:'../../assets/banner/美稀.png',
+  //   alt:'miki_美稀_banner',
+  //   url:'#'
+  // }]
 
   liveinfo:any ={
     date:'2022/6/25 @渋谷gee-ge',
@@ -53,7 +57,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('firstVideo', {static:true}) firstVideo:ElementRef<HTMLDivElement>;
   @ViewChild('secondVideo', {static:true}) secondVideo:ElementRef<HTMLDivElement>;
 
-  constructor() { }
+  constructor(private cs:CommonService) { }
 
  animation(){
     const tl = gsap.timeline();
@@ -89,6 +93,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     // console.log(this.videos[0].title);
     this.animation();
+    this.cs.getHomeBanner().subscribe(banners =>{
+      console.log(banners.data);
+      this.banners = banners.data;
+    })
   }
 
 }

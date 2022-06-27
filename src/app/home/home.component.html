@@ -14,7 +14,7 @@
         [class.active]="i === 0"
         *ngFor="let banner of banners; let i = index"
       >
-        <a [href]="banner.url"><img [src]="banner.img" class="d-block w-100" [alt]="banner.alt" /></a>
+        <a [href]="banner.attributes.url"><img [src]="host + banner.attributes.img.data[0].attributes.formats.large.url" class="d-block w-100" [alt]="banner.attributes.alt" /></a>
       </div>
     </div>
     <button
